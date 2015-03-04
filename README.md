@@ -3,6 +3,14 @@
 Policy is a simple library to manage policy strategies for different "resources" which are operated on by one or more
 "agents".
 
+## Features
+
+* No external dependencies
+* Lightweight
+* Pure and plain Ruby
+* Does not hook into your framework
+* Does not do the real work for you
+
 ## Installation
 
 Add this line to your application's Gemfile:
