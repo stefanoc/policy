@@ -1,5 +1,5 @@
-require "policy/version"
+require 'policy/version'
 
 module Policy
-  
+
 end

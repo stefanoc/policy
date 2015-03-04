@@ -1,3 +1,6 @@
+require 'yaml'
+require 'pathname'
+
 module Policy
   class RoleBasedPolicy < Base
     class <<self
@@ -28,7 +31,7 @@ module Policy
     end
 
     def policy_definition_path
-      @policy_definition_path ||= Pathname.new(RoleBasedPolicy.policy_definitions_root).join(resource.class.name.underscore + '.yml')
+      @policy_definition_path ||= Pathname.new(RoleBasedPolicy.policy_definitions_root).join(resource.class.name.gsub('::', '/').gsub(/([a-z])([A-Z])/, '\1_\2').downcase + '.yml')
     end
   end
 end

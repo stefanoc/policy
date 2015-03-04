@@ -24,7 +24,7 @@ module Policy
     end
 
     def capabilities
-      allowed_actions.with_object({}) { |caps, action| caps[action] = can?(action) }
+      allowed_actions.each.with_object({}) { |action, caps| caps[action] = can?(action) }
     end
 
     def allowed_actions
