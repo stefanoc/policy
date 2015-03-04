@@ -1,5 +1,8 @@
 require 'policy/version'
-
-module Policy
-
-end
+require 'policy/support'
+require 'policy/resolver'
+require 'policy/base'
+require 'policy/agent'
+require 'policy/resource'
+require 'policy/multi_agent_support'
+require 'policy/role_based_policy'
