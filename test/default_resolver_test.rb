@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require 'policy/resolver'
+require 'policy'
 
 class DefaultResolverTest < Minitest::Test
   def setup

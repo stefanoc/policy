@@ -1,10 +1,5 @@
 require 'minitest/autorun'
-require 'policy/base'
-require 'policy/resolver'
-require 'policy/agent'
-require 'policy/resource'
-require 'policy/role_based_policy'
-require 'pry'
+require 'policy'
 
 class RoleBasedPolicyTest < Minitest::Test
   class ::TestAgent < Struct.new(:role)

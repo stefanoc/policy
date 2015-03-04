@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require 'policy/base'
+require 'policy'
 
 class BaseTest < Minitest::Test
   def setup

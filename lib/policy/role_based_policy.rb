@@ -31,7 +31,7 @@ module Policy
     end
 
     def policy_definition_path
-      @policy_definition_path ||= Pathname.new(RoleBasedPolicy.policy_definitions_root).join(Support.underscore(resource.class.name) + '.yml')
+      @policy_definition_path ||= Pathname.new(RoleBasedPolicy.policy_definitions_root).join(Policy::Support.underscore(resource.class.name) + '.yml')
     end
   end
 end

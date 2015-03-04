@@ -33,7 +33,7 @@ An agent entity must include the ```Policy::Agent``` mix-in; this adds the ```ca
 
 A resource entity must include the ```Policy::Resource``` mix-in; this adds the ```policy_for(agent)``` instance method.
 
-The provided ```Policy::RoleBasedPolicy``` class implemts a simple role-based policy which stores the permissions
+The provided ```Policy::RoleBasedPolicy``` class implements a simple role-based policy which stores the permissions
 in a YAML file. It assumes that the agent responds to the ```role``` instance method.
 Example:
 
@@ -98,7 +98,7 @@ Note that you must include ```Policy::MultiAgentSupport``` _after_ ```allow_agen
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/policy/fork )
+1. Fork it ( https://github.com/stefanoc/policy/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
