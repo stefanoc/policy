@@ -5,6 +5,12 @@ module Policy
   class RoleBasedPolicy < Base
     class <<self
       attr_accessor :policy_definitions_root
+
+      def policy_definitions_cache
+        @@policy_definitions_cache
+      end
+
+      @@policy_definitions_cache = {}
     end
 
     PolicyDefinitionNotFound = Class.new(StandardError)
@@ -23,7 +29,7 @@ module Policy
     end
 
     def policy_definition
-      @policy_definition ||= YAML.load(File.read(policy_definition_path)).tap do |defn|
+      Policy::RoleBasedPolicy.policy_definitions_cache[policy_definition_path] ||= YAML.load(File.read(policy_definition_path)).tap do |defn|
         raise(InvalidPolicyDefinition, "Missing '#{DEFAULTS_KEY}' key") unless defn.has_key?(DEFAULTS_KEY)
       end
     rescue Errno::ENOENT

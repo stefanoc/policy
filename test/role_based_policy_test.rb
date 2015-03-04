@@ -37,4 +37,8 @@ class RoleBasedPolicyTest < Minitest::Test
     assert true, @admin.can?(:read, @res)
     assert true, @admin.can?(:create, @res)
   end
+
+  def test_definition_caching
+    assert_equal ['/tmp/test_resource.yml'], Policy::RoleBasedPolicy.policy_definitions_cache.keys.map(&:to_s)
+  end
 end
