@@ -17,11 +17,13 @@ module Policy
       @cached_policies = {}
     end
 
-    def find_policy(resource)
-      @cached_policies[resource.class] ||= resolve_recursive(resource.class.ancestors)
+    def find_policy(klass)
+      @cached_policies[klass] ||= resolve_recursive(klass.ancestors)
     end
 
-    alias_method :[], :find_policy
+    def policy_for(resource)
+      find_policy(resource.class)
+    end
 
     private
 

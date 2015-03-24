@@ -19,6 +19,11 @@ module Policy
       validate_agent!
     end
 
+    def recycle(new_resource)
+      @resource = new_resource
+      self
+    end
+
     def can?(action)
       allowed_actions.include?(action)
     end
